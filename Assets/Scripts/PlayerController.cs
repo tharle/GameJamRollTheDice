@@ -44,8 +44,7 @@ public class PlayerController : MonoBehaviour
         DicesUsed.Add(dice);
 
 
-        Debug.Log($"DicesPool : {DicesPool.Count}'");
-        Debug.Log($"DicesUsed : {DicesUsed.Count}'");
+        Debug.Log($"DicesPool : {DicesPool.Count}' / DicesUsed : {DicesUsed.Count}'");
 
         return dice;
 

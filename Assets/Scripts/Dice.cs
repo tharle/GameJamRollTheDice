@@ -12,9 +12,9 @@ public class Dice
     // Qual é a face que está sendo mostrada
     public DiceFace ActualFace;
 
-    public int? Value {
+    public int Value {
         get {
-            return ActualFace?.Value;
+            return ActualFace != null ? ActualFace.Value : 0;
         }
     }
 

@@ -7,6 +7,7 @@ public class DiceController : MonoBehaviour {
     public Dice dice;
 
     private SpriteRenderer rend;
+    private EnemyScript enemyScript;
 
     public bool clickable = true;
 
@@ -35,18 +36,27 @@ public class DiceController : MonoBehaviour {
     private IEnumerator CoroutineRollTheDice()
     {
         clickable = false;
+        enemyScript = FindObjectOfType(typeof(EnemyScript)) as EnemyScript;
+        
 
         for (int i = 0; i <= 20; i++)
         {
             var actualSide = Random.Range(0, dice.NSides - 1);
 
             // Para antes da proxima interacao
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.5f);
             dice.ChangeFace(actualSide);
         }
-
-        
-
         Debug.Log($"Rolamos um D{dice.NSides} e o resultado foi '{dice.Value}' do tipo '{dice.Type}'");
+        // RunDamageDices(dice);
+    }
+
+    private void RunDamageDices(Dice dice)
+    {
+
+        enemyScript.TakeDamage(dice.Value);
+
+
+        // TODO verify type of damage
     }
 }
