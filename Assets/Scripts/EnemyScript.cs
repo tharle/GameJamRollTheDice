@@ -41,7 +41,7 @@ public class EnemyScript : MonoBehaviour
     {
         HP -= damage;
 
-        // Debug.Log($"O Monstro '{Type}' tomou {damage} de dano. '");
+        Debug.Log($"O Monstro '{Type}' tomou {damage} de dano. '");
 
         if (HP <= 0)
         {

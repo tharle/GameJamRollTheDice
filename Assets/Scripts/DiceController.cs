@@ -36,7 +36,7 @@ public class DiceController : MonoBehaviour {
     private IEnumerator CoroutineRollTheDice()
     {
         clickable = false;
-        enemyScript = FindObjectOfType(typeof(EnemyScript)) as EnemyScript;
+       enemyScript = FindObjectOfType(typeof(EnemyScript)) as EnemyScript;
         
 
         for (int i = 0; i <= 20; i++)
@@ -44,11 +44,11 @@ public class DiceController : MonoBehaviour {
             var actualSide = Random.Range(0, dice.NSides - 1);
 
             // Para antes da proxima interacao
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.05f);
             dice.ChangeFace(actualSide);
         }
         Debug.Log($"Rolamos um D{dice.NSides} e o resultado foi '{dice.Value}' do tipo '{dice.Type}'");
-        // RunDamageDices(dice);
+        RunDamageDices(dice);
     }
 
     private void RunDamageDices(Dice dice)
