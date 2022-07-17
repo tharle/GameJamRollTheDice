@@ -62,7 +62,7 @@ public class DiceController : MonoBehaviour {
             default:
                 break;
         }
-
+        //main comentarioi
 
         // TODO verify type of damage
     }
