@@ -54,7 +54,14 @@ public class DiceController : MonoBehaviour {
     private void RunDamageDices(Dice dice)
     {
 
-        enemyScript.TakeDamage(dice.Value);
+        
+        switch (dice.Type) {
+            case (DiceFace.DiceType.NORMAL):
+                enemyScript.TakeDamage(dice.Value);
+                break;
+            default:
+                break;
+        }
 
 
         // TODO verify type of damage
