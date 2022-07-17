@@ -18,10 +18,10 @@ public class DiceFace
         set 
         {
             spriteName = value;
-            Sprite = Resources.Load<Sprite>($"DiceSides/{spriteName}");
+            sprite = Resources.Load<Sprite>($"DiceSides/{spriteName}");
         }
     }
-    public Sprite Sprite;
+    public Sprite sprite;
 
     public enum DiceType 
     { 

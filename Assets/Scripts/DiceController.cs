@@ -1,48 +1,25 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class DiceController : MonoBehaviour {
 
-    // lista de lados do dados
-    public DiceFace[] diceFaces;
-
-    //Tamanho dos dados
-    public int nSides;
-
-    // Qual é a face que está sendo mostrada
-    public DiceFace actualFace;
+    public Dice dice;
 
     private SpriteRenderer rend;
 
     public bool clickable = true;
 
-	private void Start () {
-        rend = GetComponent<SpriteRenderer>();
-
-
-        //diceSides = Resources.LoadAll<Sprite>("DiceSides/");
-        intValueDices();
-    }
-
-    private void intValueDices()
+	private void Start () 
     {
-        diceFaces = new DiceFace[nSides];
-        for (var i = 0; i < nSides; i++)
-        {
-            diceFaces[i] = new DiceFace
-            {
-                SpriteName = $"NORMAL_{i}",
-                Value = i+1,
-                Type = DiceFace.DiceType.NORMAL
-            };
-        }
-
-        actualFace = diceFaces[0];
+        dice = new Dice();
+        rend = GetComponent<SpriteRenderer>();
     }
 
     private void LateUpdate()
     {
-        rend.sprite = actualFace.Sprite;
+
+        if(dice != null && dice.sprite != null) rend.sprite = dice.ActualFace.sprite;
     }
 
     private void OnMouseDown()
@@ -61,16 +38,15 @@ public class DiceController : MonoBehaviour {
 
         for (int i = 0; i <= 20; i++)
         {
-            var actualSide = Random.Range(0, nSides - 1);
+            var actualSide = Random.Range(0, dice.NSides - 1);
 
             // Para antes da proxima interacao
             yield return new WaitForSeconds(0.05f);
-
-            actualFace = diceFaces[actualSide];
+            dice.ChangeFace(actualSide);
         }
 
         
 
-        Debug.Log($"Rolamos um D{nSides} e o resultado foi '{actualFace.Value}' do tipo '{actualFace.Type}'");
+        Debug.Log($"Rolamos um D{dice.NSides} e o resultado foi '{dice.Value}' do tipo '{dice.Type}'");
     }
 }

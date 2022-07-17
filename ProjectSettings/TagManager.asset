@@ -41,6 +41,12 @@ TagManager:
   - name: Background
     uniqueID: 2084010773
     locked: 0
+  - name: DiceSpaces
+    uniqueID: 2673251949
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: HUD
+    uniqueID: 1658658079
     locked: 0

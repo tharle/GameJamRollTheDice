@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 2186148223081235643}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.8, y: 0.61, z: 0}
-  m_LocalScale: {x: 0.4271, y: 0.4348, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -46,15 +46,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16484ec18e68b2e409273f511465b6ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  diceSides:
-  - {fileID: 21300000, guid: be18939f72d2d9642bb1251864e2a05d, type: 3}
-  - {fileID: 21300000, guid: b7e200a4a126bb249901d5ab20598854, type: 3}
-  - {fileID: 21300000, guid: a88676b372796b5498d171dd8aa16eaf, type: 3}
-  - {fileID: 21300000, guid: a78c40075d86a334a823e6dea33d5462, type: 3}
-  - {fileID: 21300000, guid: caaffc54845fbb44d859a71e625283f7, type: 3}
-  - {fileID: 21300000, guid: 3f4aea9c7e6e05d46a7ed64066049d08, type: 3}
-  nSides: 6
-  actualSide: 1
   clickable: 1
 --- !u!212 &2186148223081235646
 SpriteRenderer:
@@ -125,7 +116,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.64, y: 3.64}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 3.64, y: 3.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
